@@ -1,11 +1,10 @@
 <% provide :title, "Home" %>
-
 <div class="center jumbotron">
   <h1>Sample App</h1>
   <p>
     This is the home page for the
-    <a href="http:www.railsrutorial.org/">Ruby on Rails Tutorial</a>
+    <%= link_to t("static.help.rails_tutorial"), t("static.help.rails_tutorial_link") %>
     sample application
   </p>
-  <%= link_to "Sign up now!", "#" , class: "btn btn-lg btn-primary" %>
+  <%= link_to t("sigup_now"), signup_path , class: "btn btn-lg btn-primary" %>
 </div>

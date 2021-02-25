@@ -267,7 +267,9 @@ DEPENDENCIES
   bootstrap-sass (~> 3.4, >= 3.4.1)
   byebug
   capybara (>= 3.26)
+
   config
+
   jbuilder (~> 2.7)
   listen (~> 3.3)
   puma (~> 5.0)
