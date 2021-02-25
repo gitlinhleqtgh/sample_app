@@ -10,6 +10,16 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  # return hash digest of the gien string
+  def self.digest string
+    cost = if ActiveModel::SecurePassword.min_cost
+             BCrypt::Engine::MIN_COST
+           else
+             BCrypt::Engine.cost
+           end
+    BCrypt::Password.create string, cost: cost
+  end
+
   private
 
   def downcase_email
