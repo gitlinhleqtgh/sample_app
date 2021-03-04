@@ -1,4 +1,5 @@
 vi:
+  base_title: "Hướng dẫn xây dựng ứng dụng mẫu bằng RoR"
   create_my_account: "Tạo tài khoản"
   sign_up: "Đăng ký"
   log_in: "Đăng nhập"
