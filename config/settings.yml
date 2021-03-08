@@ -1,1 +1,3 @@
 size: 50
+user:
+  password_minimum: 6
