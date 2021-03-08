@@ -1,3 +1,5 @@
 <li class="li_user">
+  <%= gravatar_for user, size: Settings.size %>
   <%= link_to user.name, user %>
+  <%= admin_or_user user %>
 <li>

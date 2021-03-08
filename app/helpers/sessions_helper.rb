@@ -20,12 +20,6 @@ module SessionsHelper
     current_user.present?
   end
 
-  def forget user
-    user.forget
-    cookies.delete(:user_id)
-    cookies.delete(:remember_token)
-  end
-
   def log_out
     forget(current_user)
     session.delete(:user_id)
@@ -39,7 +33,34 @@ module SessionsHelper
     cookies.permanent[:remember_token] = user.remember_token
   end
 
-  def remember_or_forget user
+  def forget user
+    user.forget
+    cookies.delete(:user_id)
+    cookies.delete(:remember_token)
+  end
+
+  def remember_or_foget user
     params[:session][:remember_me] == "1" ? remember(user) : forget(user)
+  end
+
+  def current_user? user
+    user == current_user
+  end
+
+  def redirect_back_or default
+    redirect_to(session[:forwarding_url] || default)
+    session.delete(session[:forwarding_url] || default)
+    session.delete(:forwarding_url)
+  end
+
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
+  end
+
+  def admin_or_user user
+    return unless current_user.admin? && !current_user?(user)
+
+    link_to "delete", user, method: :delete,
+      data: {confirm: t("are_you_sure")}
   end
 end

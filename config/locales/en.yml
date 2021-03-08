@@ -24,3 +24,7 @@ en:
   show: "Show"
   are_you_sure: "Are you sure?"
   pass_confirm: "Confirmation Password"
+  save_change: "Save Changes"
+  profile_update_success: "Profile updated."
+  profile_update_faild: "Profile update faild!"
+  please_login: "Please login"
