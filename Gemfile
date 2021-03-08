@@ -4,18 +4,18 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 ruby "2.5.1"
 
 gem "puma", "~> 5.0"
-gem "rails", "~> 6.1.3"
-gem "sqlite3", "~> 1.4"
 
 gem "bootstrap-sass", "~> 3.4", ">= 3.4.1"
+gem "rails", "~> 6.1.3"
 gem "sass-rails", ">= 6"
-
-gem "jbuilder", "~> 2.7"
-gem "turbolinks", "~> 5"
-gem "webpacker", "~> 5.0"
+gem "sqlite3", "~> 1.4"
 
 gem "bcrypt", "~> 3.1", ">= 3.1.15"
 gem "config", "~> 1.4"
+gem "jbuilder", "~> 2.7"
+gem "jquery-rails", "4.3.1"
+gem "turbolinks", "~> 5"
+gem "webpacker", "~> 5.0"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
@@ -43,5 +43,4 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem "webdrivers"
 end
-
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
