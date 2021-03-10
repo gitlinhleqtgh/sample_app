@@ -23,8 +23,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:sucess] = t("welcome_user")
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = t("message_active")
+      redirect_to root_url
     else
       flash.now[:danger] = t("message_register_error")
       render :new
@@ -62,11 +63,11 @@ class UsersController < ApplicationController
 
   # confirms a logged in user
   def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = t("please_login")
-      redirect_to login_url
-    end
+    return if logged_in?
+
+    store_location
+    flash[:danger] = t("please_login")
+    redirect_to login_url
   end
 
   # Use callbacks to share common setup or constraints between actions.

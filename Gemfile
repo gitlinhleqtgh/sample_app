@@ -21,6 +21,7 @@ gem "webpacker", "~> 5.0"
 gem "faker", "~> 2.16"
 
 gem "bootstrap-will_paginate", "~> 1.0"
+gem "figaro", "~> 1.2"
 gem "will_paginate", "~> 3.3"
 
 group :development, :test do
