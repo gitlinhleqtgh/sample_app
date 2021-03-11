@@ -1,3 +1,7 @@
 size: 50
 user:
+  email:
+    default: "linhleqtgh@gmail.com"
+    layout: "mailer"
+    maxlength: 225
   password_minimum: 6

@@ -17,3 +17,20 @@ vi:
   new_user: "User mới"
   no_user: "Không có User"
   welcome_user: "Chào mừng đến với sample_app"
+  pass_confirm: "Xác nhận Mật Khẩu"
+  save_change: "Lưu thay đổi"
+  profile_update_success: "Cập nhật thông tin thành công."
+  profile_update_faild: "Cập nhật thông tin không thành công"
+  please_login: "Xin vui long đăng nhập"
+  user_deleted: "Đã xóa người dùng"
+  account_activated: "Kích hoạt tài khoản thành công"
+  account_activation_error: "Liên kết kích hoạt không hợp lệ"
+  message_active: "Tài khoản chưa được kích hoạt. Hãy kiểm tra email của bạn để biết liên kết kích hoạt."
+  account_active: "Kich hoat tai khoan"
+  mailer:
+    email_message: "Sample App!"
+    email_say: "Xin Chao"
+    email_content: "Chao mung ban den voi Sample App
+      Nhan vao lien ket de kich hoat tai khoan cua ban"
+    account_activation:
+      subject: "Kich hoat tai khoan"
