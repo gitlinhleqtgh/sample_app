@@ -10,8 +10,8 @@ vi:
   profile_message: "Thông tin đã được cập nhật"
   login_message: "Vui lòng đăng nhập"
   list_user: "Tất cả người dùng"
-  user_deleted: "Đã xóa người dùng"
-  user_delete_faild: "Xóa không thành công!"
+  user_delete_s: "Người dùng đã được xóa"
+  user_delete_e: "Xóa không thành công!"
   link_delete: "Xóa"
   _user_confirm: "xác nhận"
   new_user: "User mới"
@@ -27,6 +27,12 @@ vi:
   account_activation_error: "Liên kết kích hoạt không hợp lệ"
   message_active: "Tài khoản chưa được kích hoạt. Hãy kiểm tra email của bạn để biết liên kết kích hoạt."
   account_active: "Kich hoat tai khoan"
+  forgot_password: "Quên mật khẩu?"
+  sented_password_reset: "Đã gửi email kèm theo hướng dẫn đặt lại mật khẩu"
+  email_address_not_found: Không tìm thấy địa chỉ email
+  password_reset: "Đặt lại mật khẩu"
+  can_not_empty: "Không thể trống!"
+  password_reseted: "Mật khẩu đã được đặt lại."
   mailer:
     email_message: "Sample App!"
     email_say: "Xin Chao"
@@ -34,3 +40,7 @@ vi:
       Nhan vao lien ket de kich hoat tai khoan cua ban"
     account_activation:
       subject: "Kich hoat tai khoan"
+    email_say_reset_password: "Để đặt lại mật khẩu của bạn, hãy nhấp vào liên kết bên dưới:"
+    email_content_reset_password: "Liên kết này sẽ hết hạn sau hai giờ.
+      Nếu bạn không yêu cầu đặt lại mật khẩu của mình, vui lòng bỏ qua email này và
+      mật khẩu của bạn sẽ vẫn như cũ."
