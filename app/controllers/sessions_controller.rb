@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by email: params[:session][:email].downcase
     if user&.authenticate params[:session][:password]
-      activated
+      activated user
     else
       flash.now[:danger] = t("danger_login")
       render :new
@@ -11,6 +11,6 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
-    redirect_to root_url
+    redirect_to root_path
   end
 end

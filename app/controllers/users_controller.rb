@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: %i(index edit update destroy)
   before_action :load_user, only: %i(show edit update destroy)
+  before_action :logged_in_user, only: %i(index edit update destroy)
   before_action :correct_user, only: %i(edit update)
 
   # GET /users or /users.json
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     if @user.save
       @user.send_activation_email
       flash[:info] = t("message_active")
-      redirect_to root_url
+      redirect_to root_path
     else
       flash.now[:danger] = t("message_register_error")
       render :new
@@ -50,10 +50,17 @@ class UsersController < ApplicationController
     else
       flash[:danger] = t("user_delete_faild")
     end
-    redirect_to users_url
+    redirect_to users_path
   end
 
   private
+  # Use callbacks to share common setup or constraints between actions.
+  def load_user
+    return if @user = User.find_by(id: params[:id])
+
+    flash[:danger] = t("no_user")
+    redirect_to new_user_path
+  end
 
   # Only allow a list of trusted parameters through.
   def user_params
@@ -67,16 +74,7 @@ class UsersController < ApplicationController
 
     store_location
     flash[:danger] = t("please_login")
-    redirect_to login_url
-  end
-
-  # Use callbacks to share common setup or constraints between actions.
-  def load_user
-    @user = User.find_by(id: params[:id])
-    return if @user
-
-    flash[:danger] = t("no_user")
-    redirect_to new_user_path
+    redirect_to login_path
   end
 
   # confirms the correct user.

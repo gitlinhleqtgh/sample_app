@@ -64,7 +64,7 @@ module SessionsHelper
       data: {confirm: t("are_you_sure")}
   end
 
-  def activated
+  def activated user
     if user.activated?
       log_in user
       remember_or_foget user
